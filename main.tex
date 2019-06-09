@@ -1,0 +1,106 @@
+% https://en.wikibooks.org/wiki/LaTeX/Curriculum_Vitae
+\documentclass[10pt,a4paper,roman]{moderncv}
+
+%% ModernCV themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\renewcommand{\familydefault}{\sfdefault}
+\nopagenumbers{}
+
+%% Character encoding
+\usepackage[utf8]{inputenc}
+
+%% Adjust the page margins
+\usepackage[scale=0.75]{geometry}
+\usepackage{url}
+
+
+\usepackage{multibib}
+\newcites{proceedings,talk}{{International Conference (peer-reviewed)},{Talk/Tutorial}}
+
+%% Personal data
+\firstname{Shigeki}
+\familyname{Karita}
+\title{Resumé} 
+\address{Osaka, Japan}
+%\mobile{+81~(80)~6329~7098} 
+% \phone{+2~(345)~678~901} 
+% \fax{+3~(456)~789~012} 
+\email{karita@ieee.org} 
+\social[github]{ShigekiKarita}
+\homepage{https://karita.xyz} 
+%\homepage{https://scholar.google.com/citations?user=enV4FrIAAAAJ}
+\extrainfo{updated \today} 
+%\photo[64pt][0.4pt]{picture}
+%\quote{Some quote (optional)}
+
+
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+%%------------------------------------------------------------------------------
+%% Content
+%%------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Work Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cventry{April 2016 - present}{Research Scientist}{NTT Communication Science Laboratories}{Kyoto, Japan}{ }{Reseach and develop automatic speech recognition (ASR) and machine learning systems in C++, CUDA and Python at NTT.  Mostly working with Dr. Atsunori Ogawa, Dr. Marc Delcroix at NTT, and Dr. Shinji Watanabe at JHU.}  % arguments 3 to 6 can be left empty
+
+\cventry{April 2015 - March 2016}{Teaching Assistant}{Graduate School of Engineering, Osaka University}{Osaka, Japan}{ }{Wrote several textbooks for "Programming Exercise" class that covers signal processing, statistical analysis and tiny compiler in C++ and Java, and advised students in the class with Assistant Prof. Kazuaki Nakamura.}  % arguments 3 to 6 can be left empty
+
+\cventry{September 2015 - March 2015}{Research Intern}{NTT Communication Science Laboratories}{Kyoto, Japan}{ }{Implemented a convolutional neural network (CNN) acoustic model from scratch in C++, CUDA and OpenCL, and published CNN-based reverberant robust ASR paper at ICASSP 2016~\cite{Yoshioka2015} with Dr. Takuya Yoshioka at NTT.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{April 2014 - March 2016}{M.Eng}{Graduate School of Engineering, Osaka University}{Osaka, Japan}{ \textit{Electronic and Information Engineering} }{Advisor: Prof. Noboru Babaguchi}  % arguments 3 to 6 can be left empty
+
+\cventry{April 2010 - March 2014}{B.Eng}{School of Engineering, Osaka University}{Osaka, Japan}{ \textit{Electronic and Information Engineering} }{Advisor: Prof. Noboru Babaguchi}  % arguments 3 to 6 can be left empty
+
+\section{Projects}
+\cvitem{Automatic Speech Recognition at NTT}{Research Scientist}
+\cvlistitem{This project aims to research and develop automatic speech recognition (ASR) systems at NTT.}
+\cvlistitem{My research interest includes various extensions for acoustic models and end-to-end models in ASR, for example, noise robust ASR~\cite{Karita2017}, far-field ASR~\cite{Yoshioka2015}, sequential training~\cite{karita_icassp2018}, semi-supervised training~\cite{Karita_interspeech2018,karita_icassp2019}.\newline}
+
+\cvitem{ESPnet: end-to-end speech processing toolkit}{Core Developer} % {\url{https://github.com/espnet/espnet}}
+\cvlistitem{This project introduces a new open source platform for end-to-end speech processing~\cite{Watanabe2018}.}
+\cvlistitem{Develop and maintain ASR and TTS pytorch backend, and continuous integration (CI) for unittesting and sphinx documentation. For example, my early PR made ESPnet 3-4 times faster. \url{https://github.com/espnet/espnet/pull/17}}
+% As my weekend projects at GitHub, I have developed various machine learning frameworks, e.g., GPU-based autograd tensor library, SVM, decision trees.
+
+
+\section{Skills}
+\cvitem{Research}{ {Speech and signal processing, Machine learning, High performance computing.} }
+\cvitem{Programming}{ {C++, CUDA, OpenCL, D, Python, Java, Scala, Rust} }
+\cvitem{Language}{Japanese (native), English (full professional), German (limited, read-only)}
+
+%% A publications list
+\section{Publications}
+
+also see  \url{https://scholar.google.com/citations?user=enV4FrIAAAAJ}
+\newline
+
+% TODO patent, tutorial at INTERSPEECH, staff at ASRU
+
+\nociteproceedings{*}
+\bibliographystyleproceedings{ieeetr}
+\bibliographyproceedings{proceedings}
+
+\nocitetalk{*}
+\bibliographystyletalk{ieeetr}
+\bibliographytalk{talk}
+
+\subsection{Patents}
+Contributed to more than 5 patents at NTT
+
+%\citesinthissection{5}% There are 3 cites in this section + 2 above
+% \nocite{karita_icassp2019}
+% \printbibliography[type=article,title={Papers}]
+
+
+\end{document}
